@@ -1,0 +1,108 @@
+{
+  "extends": [
+    "nolabs-ai/omp"
+  ],
+  "meta": {
+    "name": "omp",
+    "version": ""
+  },
+  "filesystem": {
+    "allow": [
+      "/tmp/",
+      "/dev/shm/",
+      "~/.local/share/uv/",
+      "~/system/",
+      "~/mail/"
+    ],
+    "read": [
+      "~/.gitignore",
+      "/usr/local/bin/",
+      "~/.config/opensearch-mcp-server-py/"
+    ]
+  },
+  "network": {
+    "block": false,
+    "allow_http2": false,
+    "allow_domain": [
+      "*"
+    ],
+    "deny_domain": [],
+    "credentials": [
+      "opencode_bearer",
+      "opencode_xapikey"
+    ],
+    "custom_credentials": {
+      "opencode_xapikey": {
+        "upstream": "https://opencode.ai",
+        "credential_key": "env://OPENCODE_API_KEY",
+        "redeem_phantoms": [],
+        "auth": null,
+        "inject_mode": "header",
+        "inject_header": "x-api-key",
+        "credential_format": "{}",
+        "path_pattern": null,
+        "path_replacement": null,
+        "query_param_name": null,
+        "proxy": null,
+        "env_var": "OPENCODE_API_KEY2",
+        "endpoint_rules": [
+          {
+            "method": "*",
+            "path": "/inference/go/v1/messages"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/v1/messages/**"
+          }
+        ]
+      },
+      "opencode_bearer": {
+        "upstream": "https://opencode.ai",
+        "credential_key": "env://OPENCODE_API_KEY",
+        "redeem_phantoms": [],
+        "auth": null,
+        "inject_mode": "header",
+        "inject_header": "Authorization",
+        "credential_format": "Bearer {}",
+        "path_pattern": null,
+        "path_replacement": null,
+        "query_param_name": null,
+        "proxy": null,
+        "env_var": "OPENCODE_API_KEY",
+        "endpoint_rules": [
+          {
+            "method": "GET",
+            "path": "/zen/go/v1/usage"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/openai/**"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/anthropic/**"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/v1/chat/**"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/v1/responses"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/v1/responses/**"
+          },
+          {
+            "method": "*",
+            "path": "/inference/go/v1/models"
+          }
+        ]
+      }
+    }
+  },
+  "workdir": {
+    "access": "readwrite"
+  }
+}

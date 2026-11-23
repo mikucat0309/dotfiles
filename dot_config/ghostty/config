@@ -1,0 +1,3 @@
+font-family = Fira Mono
+font-size = 14
+shell-integration-features = ssh-env

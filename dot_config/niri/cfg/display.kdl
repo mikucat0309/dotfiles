@@ -1,0 +1,46 @@
+// ────────────── Output Configuration ──────────────
+// You can run `niri msg outputs` to get the correct name for your displays.
+// You will have to remove "/-" and edit it before it takes effect.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+// laptop
+output "AU Optronics 0x683D Unknown" {
+  //off
+  scale 1.25 // 1536x864
+  position x=0 y=0
+  focus-at-startup
+}
+
+// home
+output "PNP(BNQ) BenQ GW2790Q ET8CS00204087" {
+  mode "2560x1440@60.000"
+  scale 1.25 // 2048x1152
+}
+
+// dorm
+output "GIGA-BYTE TECHNOLOGY CO., LTD. M27Q 0x01010101" {
+  mode "2560x1440@60.000"
+  scale 1.25
+  position x=0 y=-1152
+}
+
+// CC left
+output "Dell Inc. DELL U2724DE 7B1XL04" {
+  mode "2560x1440@60.000"
+  scale 1.25
+  position x=0 y=-1152
+}
+
+// CC right
+output "Dell Inc. DELL U2422HE 5F1GH83" {
+  mode "1920x1080@60.000"
+  scale 1
+  position x=2048 y=-1152
+}
+
+// CC duty
+output "ASUSTek COMPUTER INC XG259CM N7LMQS110207" {
+  mode "1920x1080@60.000"
+  scale 1
+  position x=0 y=-1080
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Gopass Age Passphrase Agent
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/gopass age agent
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

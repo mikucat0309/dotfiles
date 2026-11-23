@@ -1,0 +1,7 @@
+Host 10.39.2.254
+  HostKeyAlgorithms ssh-rsa
+
+Host *
+  ServerAliveInterval 10
+  ServerAliveCountMax 3
+  HostKeyAlgorithms ssh-ed25519

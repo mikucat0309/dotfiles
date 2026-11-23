@@ -1,0 +1,16 @@
+    workspace "work" {
+        open-on-output "eDP-1"
+    }
+
+    layer-rule {
+        match namespace="^noctalia-wallpaper*"
+        place-within-backdrop true
+    }
+
+    layer-rule {
+        match namespace="^(noctalia-bar|noctalia-attached-panel)*"
+        background-effect {
+            blur false
+            xray false
+        }
+    }
